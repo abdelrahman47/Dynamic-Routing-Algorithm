@@ -132,7 +132,7 @@ for x in f.readlines():
         names.append(x)
         IR = Orbital(x,tle_file=file)
         Sats.append(IR)
-#gLOBAL-STAR        
+#GLOBAL-STAR        
 for x in f1.readlines():
     if "." in x:
         continue
@@ -187,7 +187,7 @@ for i in range(len(Nodes)):
         
 #Send_To_Node(root,Dis)
 time = [] 
-
+# Runtime measurement
 for i in range(1000):
 	start = timeit.default_timer()
 	Send_To_Node(root,Dis)
@@ -196,6 +196,7 @@ for i in range(1000):
 	time.append(total)
 	print(total)
 
+#Saved Data	
 f = open("runtimeFun.txt","w")
 for i in time:
 	f.write(str(i))
